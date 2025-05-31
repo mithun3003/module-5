@@ -227,50 +227,45 @@ Step 8: End the program.
 ```
 #include <stdio.h>
 
-struct student
-{
+struct Student {
     char name[10];
-    int rollno;         
-    int subject[5];     
-    int total;         
-    float average;      
+    int rollno;
+    int subject[5];
+    int total;
 };
 
 int main() {
-    struct student s[2];  
+    struct Student s[2];
     int i, j;
-    for(i = 0; i < 2; i++) {
-        printf("Enter details for student %d\n", i + 1);
-        printf("Enter name: ");
-        scanf("%s", s[i].name);
-        printf("Enter roll number: ");
+
+    for (i = 0; i < 2; i++) {
         scanf("%d", &s[i].rollno);
-        printf("Enter marks for 5 subjects: ");
-        for(j = 0; j < 5; j++) {
+
+        for (j = 0; j < 5; j++) {
             scanf("%d", &s[i].subject[j]);
         }
+
         s[i].total = 0;
-        for(j = 0; j < 5; j++) {
+
+        for (j = 0; j < 5; j++) {
             s[i].total += s[i].subject[j];
         }
-        s[i].average = s[i].total / 5.0;
-        if(i == 0) s[i].total = 374;
-        if(i == 1) s[i].total = 383; 
     }
-    for(i = 0; i < 2; i++) {
-        printf("\nStudent %d:\n", i + 1);
-        printf("Total marks: %d\n", s[i].total);
-        printf("Average marks: %.2f\n", s[i].average);
+
+    for (i = 0; i < 2; i++) {
+        printf("Total marks of student %d: %d\n", i + 1, s[i].total);
+        printf("Average: %.2f\n", s[i].total / 5.0);
     }
 
     return 0;
 }
+
 ```
 
 
 ## OUTPUT
 
- ![WhatsApp Image 2025-04-27 at 15 53 20_133ac8e5](https://github.com/user-attachments/assets/e259fee1-70ab-49de-a703-85208be6cf97)
+![image](https://github.com/user-attachments/assets/7a02acfd-1c6c-4c3e-b949-2e1db0ce77eb)
 
  
 
